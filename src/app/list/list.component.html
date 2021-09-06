@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Author</th>
+          <th scope="col">Description</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books ">
+          <th scope="row">{{ book.id }}</th>
+          <a routerLink="/view/{{ book.id }}"><td><i>{{ book.title }}</i></td></a>
+          <td>{{ book.author }}</td>
+          <td>{{ book.description }}</td>
+          <td class="text-center">
+            <button routerLink="/edit/{{ book.id }}" class="btn btn-primary">Edit</button> |
+            <button (click)="deleteBooks(book)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
